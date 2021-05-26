@@ -60,11 +60,18 @@ def private_key(phin, e):
     e_inv= 1/e
     phin_e= phin/e
     priv_key = i*phin_e + e_inv
+    mi_path = "../fichero.txt"
+    output = open(mi_path, 'a+')
+    itermax = 0
 
     while int(priv_key) != priv_key:
+        itermax += 1
         i += 1
         priv_key = i*phin_e + e_inv
+        output.write(str(priv_key) + " " + str(i)+ "\n")
 
+    output.write("El # de iteraciones fueron {}".format(itermax))
+    output.close()
     return priv_key
 
 #____________________________________________________________________________________________________________________________________
