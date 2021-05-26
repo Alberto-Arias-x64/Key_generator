@@ -44,7 +44,7 @@ def initial_values():
 def public_key(p, q):
 
     n = p*q
-    phin = (𝑝-1)*(𝑞-1)
+    phin = (p-1)*(q-1)
     e = random.randrange(2, phin)
 
     while math.gcd(phin, e) != 1:
