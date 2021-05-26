@@ -1,6 +1,7 @@
 import random
 import math
 import os
+from os import remove
 
 def initial_values():
 
@@ -60,9 +61,14 @@ def private_key(phin, e):
     e_inv= 1/e
     phin_e= phin/e
     priv_key = i*phin_e + e_inv
-    mi_path = "../fichero.txt"
+    #nnnnnnnnnnnnnnnnnnnnnnnnnnnn
+    try:
+        remove("./fichero.txt")
+    except: pass
+    mi_path = "./fichero.txt"
     output = open(mi_path, 'a+')
     itermax = 0
+    #nnnnnnnnnnnnnnnnnnnnnnnnnnnn
 
     while int(priv_key) != priv_key:
         itermax += 1
