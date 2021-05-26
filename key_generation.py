@@ -61,7 +61,7 @@ def private_key(phin, e):
     phin_e= phin/e
     priv_key = i*phin_e + e_inv
 
-    while priv_key != int:
+    while int(priv_key) != priv_key:
         i += 1
         priv_key = i*phin_e + e_inv
 
